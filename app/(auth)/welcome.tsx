@@ -1,17 +1,12 @@
-import Dot from "@/components/ui/Dot";
-import { ONBOARDING_DATA } from "@/constants";
-import { getFontFamily } from "@/utils/fontFamily";
-import { router } from "expo-router";
-import { useRef, useState } from "react";
-import {
-  Image,
-  ImageSourcePropType,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Swiper from "react-native-swiper";
+import CustomButton from '@/components/ui/CustomButton';
+import Dot from '@/components/ui/Dot';
+import { ONBOARDING_DATA } from '@/constants';
+import { getFontFamily } from '@/utils/fontFamily';
+import { router } from 'expo-router';
+import { useRef, useState } from 'react';
+import { Image, ImageSourcePropType, Text, TouchableOpacity, View, Button } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Swiper from 'react-native-swiper';
 
 const OnBoarding = () => {
   const swiperRef = useRef<Swiper>(null);
@@ -25,7 +20,7 @@ const OnBoarding = () => {
 
   const onPressSkipHandler = () => {
     if (isLastSlide) {
-      router.replace("/(root)");
+      router.replace('/(root)');
     } else {
       swiperRef?.current?.scrollBy(1);
     }
@@ -36,11 +31,10 @@ const OnBoarding = () => {
       <TouchableOpacity className="w-full p-5 items-end justify-end">
         <Text
           style={{
-            fontFamily: getFontFamily("regular"),
+            fontFamily: getFontFamily('regular'),
           }}
           className="text-base text-honeydew tracking-widest"
-          onPress={onPressSkipHandler}
-        >
+          onPress={onPressSkipHandler}>
           Skip
         </Text>
       </TouchableOpacity>
@@ -49,9 +43,8 @@ const OnBoarding = () => {
         <Text
           className="text-center text-3xl text-cyprus leading-9"
           style={{
-            fontFamily: getFontFamily("semibold"),
-          }}
-        >
+            fontFamily: getFontFamily('semibold'),
+          }}>
           {ONBOARDING_DATA[activeIndex].title}
         </Text>
       </View>
@@ -62,30 +55,31 @@ const OnBoarding = () => {
           loop={false}
           dot={<Dot isActive />}
           activeDot={<Dot />}
-          onIndexChanged={onChangeSlider}
-        >
+          onIndexChanged={onChangeSlider}>
           {ONBOARDING_DATA.map((item) => (
             <View
               key={item.id}
-              className="w-full h-full flex flex-col gap-y-16 items-center justify-start pt-[70px] pb-[241px]"
-            >
+              className="w-full h-full flex flex-col gap-y-16 items-center justify-start pt-[70px] pb-[241px]">
               <View className="w-[230px] h-[230px] flex items-center justify-center bg-lightGreen rounded-full">
                 <Image
-                  source={item?.image as ImageSourcePropType}
+                  source={item.image as ImageSourcePropType}
                   className="w-[280px] h-[280px]"
                   resizeMode="contain"
                 />
               </View>
 
-              <Text
-                className="text-3xl text-cyprus"
-                style={{
-                  fontFamily: getFontFamily("semibold"),
-                }}
-                onPress={onPressSkipHandler}
-              >
-                {isLastSlide ? "Start Your Journey" : "Next"}
-              </Text>
+              {isLastSlide ? (
+                <CustomButton onPress={onPressSkipHandler}>Login In</CustomButton>
+              ) : (
+                <Text
+                  className="text-3xl text-cyprus"
+                  style={{
+                    fontFamily: getFontFamily('semibold'),
+                  }}
+                  onPress={onPressSkipHandler}>
+                  {isLastSlide ? 'Start Your Journey' : 'Next'}
+                </Text>
+              )}
             </View>
           ))}
         </Swiper>

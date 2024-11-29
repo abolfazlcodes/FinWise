@@ -14,7 +14,7 @@ export const ONBOARDING_DATA: IOnBoardingProps[] = [
   },
   {
     id: 2,
-    image: IMAGES.onboarding1,
+    image: IMAGES.onboarding2,
     title: "Are you ready to take control of your finances?",
   },
 ];
