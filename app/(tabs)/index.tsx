@@ -4,8 +4,21 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function HomeScreen() {
   return (
     <SafeAreaView>
-      <Text className="text-red-500 text-2xl font-bold">
+      <Text
+        style={{
+          fontFamily: "PoppinsBlackItalic",
+        }}
+        className="text-2xl text-cyprus"
+      >
         Hello World Finwise
+      </Text>
+      <Text
+        className="text-vividBlue"
+        style={{
+          fontFamily: "PoppinsExtraBold",
+        }}
+      >
+        Good Evening, Abolfazl
       </Text>
     </SafeAreaView>
   );
