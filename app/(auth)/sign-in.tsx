@@ -1,11 +1,11 @@
+import PageWrapper from '@/components/wrappers/PageWrapper';
 import { Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SignIn = () => {
   return (
-    <SafeAreaView>
-      <Text>Sign In page</Text>
-    </SafeAreaView>
+    <PageWrapper title="welcome">
+      <Text>hi</Text>
+    </PageWrapper>
   );
 };
 

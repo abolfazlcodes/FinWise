@@ -15,7 +15,7 @@ const AuthPage = () => {
   };
 
   return (
-    <SafeAreaView className="bg-honeydew flex flex-1 w-full h-full items-center justify-center border border-black">
+    <SafeAreaView className="bg-honeydew flex flex-1 w-full h-full items-center justify-center">
       <View className="w-[110px] h-[110px] flex items-center justify-center">
         <Image source={IMAGES?.LogoImage} className="w-[110px] h-[110px]" resizeMode="contain" />
       </View>
