@@ -14,6 +14,7 @@ module.exports = {
         vividBlue: '#3299FF',
         oceanBlue: '#0068FF',
         text: '#093030',
+        'text-secondary': '#4B4544',
       },
       borderRadius: {
         extraLarge: '70px',

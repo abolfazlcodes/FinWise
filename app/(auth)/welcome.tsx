@@ -1,4 +1,3 @@
-import CustomButton from '@/components/ui/CustomButton';
 import Dot from '@/components/ui/Dot';
 import { ONBOARDING_DATA } from '@/constants';
 import { getFontFamily } from '@/utils/fontFamily';
@@ -19,8 +18,12 @@ const OnBoarding = () => {
   };
 
   const onPressSkipHandler = () => {
+    router.replace('/(auth)/auth-page');
+  };
+
+  const onNextStageHandler = () => {
     if (isLastSlide) {
-      router.replace('/(root)');
+      router.replace('/(auth)/auth-page');
     } else {
       swiperRef?.current?.scrollBy(1);
     }
@@ -67,19 +70,14 @@ const OnBoarding = () => {
                   resizeMode="contain"
                 />
               </View>
-
-              {isLastSlide ? (
-                <CustomButton onPress={onPressSkipHandler}>Login In</CustomButton>
-              ) : (
-                <Text
-                  className="text-3xl text-cyprus"
-                  style={{
-                    fontFamily: getFontFamily('semibold'),
-                  }}
-                  onPress={onPressSkipHandler}>
-                  {isLastSlide ? 'Start Your Journey' : 'Next'}
-                </Text>
-              )}
+              <Text
+                className="text-3xl text-cyprus"
+                style={{
+                  fontFamily: getFontFamily('semibold'),
+                }}
+                onPress={onNextStageHandler}>
+                {isLastSlide ? 'Kick Off' : 'Next'}
+              </Text>
             </View>
           ))}
         </Swiper>
