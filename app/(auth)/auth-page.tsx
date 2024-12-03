@@ -1,8 +1,9 @@
 import CustomButton from '@/components/ui/CustomButton';
+import ForgetPassword from '@/components/ui/ForgetPassword';
 import { IMAGES } from '@/constants';
 import { getFontFamily } from '@/utils/fontFamily';
 import { router } from 'expo-router';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const AuthPage = () => {
@@ -40,9 +41,7 @@ const AuthPage = () => {
         </CustomButton>
       </View>
 
-      <TouchableOpacity>
-        <Text className="text-text text-sm font-semibold text-center">Forgot Password?</Text>
-      </TouchableOpacity>
+      <ForgetPassword />
     </SafeAreaView>
   );
 };

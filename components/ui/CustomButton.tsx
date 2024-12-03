@@ -1,3 +1,4 @@
+import { TFontType } from '@/constants/fonts';
 import { getFontFamily } from '@/utils/fontFamily';
 import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
@@ -7,6 +8,7 @@ interface ICustomButtonProps extends TouchableOpacityProps {
   IconLeft?: React.ComponentType<any>;
   IconRight?: React.ComponentType<any>;
   className?: string;
+  fontWeight?: TFontType;
 }
 
 const getBgVariantStyles = (variant: ICustomButtonProps['variant']) => {
@@ -42,7 +44,7 @@ const getSizeVariantStyles = (variant: ICustomButtonProps['size']) => {
 const getTextSizeVariantStyles = (variant: ICustomButtonProps['size']) => {
   switch (variant) {
     case 'full': {
-      return 'text3xl';
+      return 'text-3xl';
     }
     case 'large': {
       return 'text-2xl';
@@ -65,6 +67,7 @@ const CustomButton: React.FC<ICustomButtonProps> = ({
   onPress,
   IconLeft,
   IconRight,
+  fontWeight = 'medium',
   ...props
 }) => {
   return (
@@ -77,7 +80,7 @@ const CustomButton: React.FC<ICustomButtonProps> = ({
       <Text
         className={`leading-5 ${getTextSizeVariantStyles(size)}`}
         style={{
-          fontFamily: getFontFamily('medium'),
+          fontFamily: getFontFamily(fontWeight),
         }}>
         {children}
       </Text>
