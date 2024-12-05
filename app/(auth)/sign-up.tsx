@@ -5,7 +5,7 @@ import InputGroup from '@/components/ui/InputGroup';
 import InputLabel from '@/components/ui/InputLabel';
 import PageWrapper from '@/components/wrappers/PageWrapper';
 import { getFontFamily } from '@/utils/fontFamily';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import { Text, View } from 'react-native';
 
 const SignUp = () => {
@@ -59,7 +59,9 @@ const SignUp = () => {
         </Text>
 
         <View className="max-w-[210px] mx-auto my-3 flex flex-col space-y-4">
-          <CustomButton fontWeight="semibold">Sign Up</CustomButton>
+          <CustomButton fontWeight="semibold" onPress={() => router.replace('/(root)')}>
+            Sign Up
+          </CustomButton>
         </View>
 
         <Text
