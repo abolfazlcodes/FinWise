@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 
 const Analysis = () => {
   return (
-    <PageWrapper title="Analysis">
+    <PageWrapper title="Analysis" variant="typeB" hasBackIcon>
       <Text>fdsfs</Text>
     </PageWrapper>
   );
