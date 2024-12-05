@@ -1,4 +1,5 @@
 import { getFontFamily } from '@/utils/fontFamily';
+import { useState } from 'react';
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -14,7 +15,13 @@ interface IInputFieldProps extends TextInputProps {
   icon?: any;
 }
 
-const InputField: React.FC<IInputFieldProps> = ({ className, icon, ...props }) => {
+const InputField: React.FC<IInputFieldProps> = ({ className, icon, secureTextEntry, ...props }) => {
+  const [isPassword, setIsPassword] = useState(secureTextEntry);
+
+  const toggleSecurityTextEntryHandler = () => {
+    setIsPassword(!isPassword);
+  };
+
   return (
     <KeyboardAvoidingView
       className="relative"
@@ -24,9 +31,16 @@ const InputField: React.FC<IInputFieldProps> = ({ className, icon, ...props }) =
           <TextInput
             className={`bg-lightGreen py-3 pl-9 w-full pr-5 rounded-[18px] text-text text-[15px] ${className}`}
             style={{ fontFamily: getFontFamily('regular') }}
+            secureTextEntry={isPassword}
             {...props}
           />
-          {icon && <View className="absolute right-4 top-1/2">{icon}</View>}
+          {icon && (
+            <View className="absolute right-4 top-1/2">
+              <TouchableWithoutFeedback onPress={toggleSecurityTextEntryHandler}>
+                {icon}
+              </TouchableWithoutFeedback>
+            </View>
+          )}
         </View>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
