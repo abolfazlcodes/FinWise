@@ -1,11 +1,14 @@
 import { IconAnalysis, IconCategories, IconHome, IconTransactions, IconUser } from '@/assets/icons';
 import TabItemWrapper from '@/components/wrappers/TabItemWrapper';
 import { Tabs } from 'expo-router';
+import { TouchableOpacity } from 'react-native';
 
 const Layout = () => {
   return (
     <Tabs
       initialRouteName="index"
+      backBehavior="history"
+      detachInactiveScreens
       screenOptions={{
         tabBarActiveTintColor: '#00d09e',
         tabBarInactiveTintColor: '#fff',
@@ -27,6 +30,8 @@ const Layout = () => {
         options={{
           title: 'Home',
           headerShown: false,
+          // @ts-ignore
+          tabBarButton: (props) => <TouchableOpacity {...props} activeOpacity={1} />,
           tabBarIcon: ({ focused }) => (
             <TabItemWrapper isActive={focused}>
               <IconHome />
@@ -39,6 +44,8 @@ const Layout = () => {
         options={{
           title: 'Analysis',
           headerShown: false,
+          // @ts-ignore
+          tabBarButton: (props) => <TouchableOpacity {...props} activeOpacity={1} />,
           tabBarIcon: ({ focused }) => (
             <TabItemWrapper isActive={focused}>
               <IconAnalysis />
@@ -51,6 +58,8 @@ const Layout = () => {
         options={{
           title: 'Transactions',
           headerShown: false,
+          // @ts-ignore
+          tabBarButton: (props) => <TouchableOpacity {...props} activeOpacity={1} />,
           tabBarIcon: ({ focused }) => (
             <TabItemWrapper isActive={focused}>
               <IconTransactions />
@@ -63,6 +72,8 @@ const Layout = () => {
         options={{
           title: 'Categories',
           headerShown: false,
+          // @ts-ignore
+          tabBarButton: (props) => <TouchableOpacity {...props} activeOpacity={1} />,
           tabBarIcon: ({ focused }) => (
             <TabItemWrapper isActive={focused}>
               <IconCategories />
@@ -75,6 +86,8 @@ const Layout = () => {
         options={{
           title: 'Profile',
           headerShown: false,
+          // @ts-ignore
+          tabBarButton: (props) => <TouchableOpacity {...props} activeOpacity={1} />,
           tabBarIcon: ({ focused }) => (
             <TabItemWrapper isActive={focused}>
               <IconUser />

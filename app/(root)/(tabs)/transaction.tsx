@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 
 const Transaction = () => {
   return (
-    <PageWrapper title="Transaction">
+    <PageWrapper title="Transaction" variant="typeB" hasBackIcon>
       <Text>transactions</Text>
     </PageWrapper>
   );

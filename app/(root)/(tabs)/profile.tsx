@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 
 const Profile = () => {
   return (
-    <PageWrapper title="Profile">
+    <PageWrapper title="Profile" variant="typeB" hasBackIcon>
       <Text>profile</Text>
     </PageWrapper>
   );

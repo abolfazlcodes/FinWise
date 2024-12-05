@@ -1,9 +1,13 @@
 import PageWrapper from '@/components/wrappers/PageWrapper';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 const Home = () => {
   return (
-    <PageWrapper title="hi">
+    <PageWrapper
+      title="Hi Abol, Welcome Back"
+      subTitle="Good Morning"
+      variant="typeB"
+      headerChildren={<View className="border border-black"></View>}>
       <Text>fdsfs</Text>
     </PageWrapper>
   );

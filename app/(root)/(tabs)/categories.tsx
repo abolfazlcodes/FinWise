@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 
 const Categories = () => {
   return (
-    <PageWrapper title="categories">
+    <PageWrapper title="categories" variant="typeB" hasBackIcon>
       <Text>categories</Text>
     </PageWrapper>
   );
