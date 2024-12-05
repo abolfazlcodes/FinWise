@@ -8,6 +8,8 @@ import IconTransactions from '@/assets/icons/IconTransactions';
 import IconCategories from '@/assets/icons/IconCategories';
 import IconNotification from '@/assets/icons/IconNotification';
 import IconArrowLeft from '@/assets/icons/IconArrowLeft';
+import IconArrowUpContained from '@/assets/icons/IconArrowUpContained';
+import IconArrowDownContained from '@/assets/icons/IconArrowDownContained';
 
 export {
   IconEye,
@@ -20,4 +22,6 @@ export {
   IconCategories,
   IconNotification,
   IconArrowLeft,
+  IconArrowUpContained,
+  IconArrowDownContained,
 };
