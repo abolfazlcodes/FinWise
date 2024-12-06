@@ -2,6 +2,7 @@ import { IconArrowDownContained, IconArrowUpContained } from '@/assets/icons';
 import BalanceCard from '@/components/ui/BalanceCard';
 import PageWrapper from '@/components/wrappers/PageWrapper';
 import { View } from 'react-native';
+import HomeOverviewCard from './_components/HomeOverviewCard';
 
 const Home = () => {
   return (
@@ -24,21 +25,22 @@ const Home = () => {
               title="total expense"
               variant="typeA"
               type="expense"
-              value={'-$1.187.40'}
+              value={'$1.187.40'}
               fontWeight="semibold"
               icon={<IconArrowDownContained className="w-3 h-3" />}
             />
           </View>
         </View>
       }>
-      <BalanceCard
+      <HomeOverviewCard />
+      {/* <BalanceCard
         title="total expense"
         variant="typeC"
         type="expense"
-        value={'-$1.187.40'}
+        value={'$1.187.40'}
         fontWeight="semibold"
         icon={<IconArrowDownContained width={25} height={25} />}
-      />
+      /> */}
     </PageWrapper>
   );
 };

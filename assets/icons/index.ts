@@ -10,6 +10,9 @@ import IconNotification from '@/assets/icons/IconNotification';
 import IconArrowLeft from '@/assets/icons/IconArrowLeft';
 import IconArrowUpContained from '@/assets/icons/IconArrowUpContained';
 import IconArrowDownContained from '@/assets/icons/IconArrowDownContained';
+import IconCar from '@/assets/icons/IconCar';
+import IconCash from '@/assets/icons/IconCash';
+import IconFood from '@/assets/icons/IconFood';
 
 export {
   IconEye,
@@ -24,4 +27,7 @@ export {
   IconArrowLeft,
   IconArrowUpContained,
   IconArrowDownContained,
+  IconCar,
+  IconCash,
+  IconFood,
 };
