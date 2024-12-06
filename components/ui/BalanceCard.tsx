@@ -11,6 +11,11 @@ interface IBalanceCardProps {
   variant?: 'typeA' | 'typeB' | 'typeC';
   type?: 'income' | 'expense';
   fontWeight?: TFontType;
+  customClasses?: {
+    wrapper?: string;
+    valueContent?: string;
+    titleContent?: string;
+  };
 }
 
 const BalanceCard: React.FC<IBalanceCardProps> = ({
@@ -20,21 +25,23 @@ const BalanceCard: React.FC<IBalanceCardProps> = ({
   variant = 'typeA',
   fontWeight = 'bold',
   type = 'income',
+  customClasses,
 }) => {
   if (variant === 'typeA') {
     return (
-      <View className="flex-1">
+      <View className={`flex-1 ${customClasses?.wrapper}`}>
         <View className="flex flex-row items-center gap-1">
           {icon}
           <Text
-            className="text-text text-xs capitalize"
+            className={`text-text text-xs capitalize ${customClasses?.titleContent}`}
             style={{ fontFamily: getFontFamily('regular') }}>
             {title}
           </Text>
         </View>
         <Text
-          className={`${type === 'income' ? 'text-honeydew' : 'text-oceanBlue'} text-2xl`}
+          className={`${type === 'income' ? 'text-honeydew' : 'text-oceanBlue'} text-2xl ${customClasses?.valueContent}`}
           style={{ fontFamily: getFontFamily(fontWeight) }}>
+          {type === 'expense' && '-'}
           {value}
         </Text>
       </View>
@@ -43,20 +50,19 @@ const BalanceCard: React.FC<IBalanceCardProps> = ({
 
   if (variant === 'typeB') {
     return (
-      <View className="flex-1 flex flex-row gap-x-3">
-        <View className="flex items-center justify-center">
-          <IconArrowUpContained width={24} height={24} className="w-full h-full" />
-        </View>
+      <View className={`flex-1 flex flex-row gap-x-2 ${customClasses?.wrapper}`}>
+        <View className="flex items-center justify-center flex-shrink flex-1">{icon}</View>
 
-        <View className="flex flex-col items-start gap-1">
+        <View className="flex flex-col items-start gap-1 flex-[5]">
           <Text
-            className="text-text text-xs capitalize"
+            className={`text-text text-xs capitalize ${customClasses?.titleContent}`}
             style={{ fontFamily: getFontFamily('regular') }}>
             {title}
           </Text>
           <Text
-            className={`${type === 'income' ? 'text-honeydew' : 'text-oceanBlue'} text-2xl`}
+            className={`${type === 'income' ? 'text-text' : 'text-oceanBlue'} text-2xl ${customClasses?.valueContent}`}
             style={{ fontFamily: getFontFamily(fontWeight) }}>
+            {type === 'expense' && '-'}
             {value}
           </Text>
         </View>
@@ -66,16 +72,18 @@ const BalanceCard: React.FC<IBalanceCardProps> = ({
 
   if (variant === 'typeC') {
     return (
-      <View className="flex-1 flex flex-col items-center justify-center w-[171px] h-[101px] pt-4 pb-3 px-7 bg-honeydew rounded-[14px] gap-y-1">
+      <View
+        className={`flex-1 flex flex-col items-center justify-center w-[171px] h-[101px] pt-4 pb-3 px-7 bg-honeydew rounded-[14px] gap-y-1 ${customClasses?.wrapper}`}>
         {icon}
         <Text
-          className="text-text capitalize text-xs"
+          className={`text-text text-xs capitalize ${customClasses?.titleContent}`}
           style={{ fontFamily: getFontFamily('regular') }}>
           {title}
         </Text>
         <Text
-          className={`${type === 'income' ? 'text-text' : 'text-oceanBlue'} text-xl`}
+          className={`${type === 'income' ? 'text-text' : 'text-oceanBlue'} text-xl ${customClasses?.valueContent}`}
           style={{ fontFamily: getFontFamily(fontWeight) }}>
+          {type === 'expense' && '-'}
           {value}
         </Text>
       </View>
