@@ -19,6 +19,8 @@ module.exports = {
       borderRadius: {
         extraLarge: '70px',
         31: '31px',
+        19: '19px',
+        22: '22px',
       },
     },
   },

@@ -1,6 +1,7 @@
 import onboarding1 from '@/assets/images/onboarding1.png';
 import onboarding2 from '@/assets/images/onboarding2.png';
 import LogoImage from '@/assets/images/logo.png';
+import { IOnBoardingProps, ITabItemProps } from '@/types';
 
 export const IMAGES = {
   onboarding1,

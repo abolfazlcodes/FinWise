@@ -3,13 +3,14 @@ import React, { ReactNode } from 'react';
 import { IconArrowUpContained } from '@/assets/icons';
 import { getFontFamily } from '@/utils/fontFamily';
 import { TFontType } from '@/constants/fonts';
+import { TTransactionType } from '@/types';
 
 interface IBalanceCardProps {
   title: string;
   value: string | number;
   icon: ReactNode;
   variant?: 'typeA' | 'typeB' | 'typeC';
-  type?: 'income' | 'expense';
+  type?: TTransactionType;
   fontWeight?: TFontType;
   customClasses?: {
     wrapper?: string;
@@ -92,3 +93,14 @@ const BalanceCard: React.FC<IBalanceCardProps> = ({
 };
 
 export default BalanceCard;
+
+{
+  /* <BalanceCard
+        title="total expense"
+        variant="typeC"
+        type="expense"
+        value={'$1.187.40'}
+        fontWeight="semibold"
+        icon={<IconArrowDownContained width={25} height={25} />}
+      /> */
+}

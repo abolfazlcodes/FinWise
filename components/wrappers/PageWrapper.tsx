@@ -82,10 +82,10 @@ const PageWrapper: React.FC<IPageWrapperProps> = ({
       )}
 
       {/* body of the wrapper - whatever given to it */}
-      <ScrollView
+      <View
         className={`bg-honeydew flex-[3] rounded-t-[70px] px-9 pt-7 pb-20 ${customClasses?.bodyWrapper}`}>
         {children}
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
